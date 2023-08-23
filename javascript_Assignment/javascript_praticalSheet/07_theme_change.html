@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme changing </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+<style>
+    /* create darkmode class for change theme */
+    .dark-mode{
+            color:white;
+            background-color: rgb(23, 22, 22);
+    }
+    .dark-mode a{
+        color:white;
+        text-decoration: none;
+    }
+    .theme span{
+        font-size: 150px;
+    }
+</style>
+</head>
+<body>
+    <div class="theme">
+    <span class="bi bi-moon"></span>
+    </div>  
+    
+    <a href="">click here</a>
+    <script>
+        let icon=document.querySelector(".bi-moon")
+        icon.addEventListener("click",function(){
+            document.body.classList.toggle("dark-mode")
+            if(document.body.classList.contains("dark-mode")== true){
+                icon.classList.remove("bi-moon")
+                icon.classList.add("bi-brightness-high")
+            }else{
+                icon.classList.remove("bi-brightness-high")
+                icon.classList.add("bi-moon")
+            }
+        })  
+    </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(37, 194, 37);
+        }
+        .reg{
+            transform: translate(35%, -2%);
+            background-color: whitesmoke;
+            height: auto;
+            width: 63%;
+            box-shadow: 0px 0px 5px black;
+        }
+        h1{
+            font-family: Arial;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px auto;
+            padding: 30px 0px 0px 0px;
+        }
+        .msg{
+            color: red;
+            text-align: center;
+            display: grid;
+            place-content: center;
+            padding: 15px 0px;
+        }
+        label{
+            padding: 12px 48px 12px 0px;
+            display: inline-block;
+        }
+        .c_pass{
+            display: inherit;
+            padding: 0px 0px 0px 0px;
+            text-align: center;
+            margin-top: 13px;
+        }
+        .male{
+            padding: 0px 15px 0px 0px;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="select"], input[type="date"], input[type="select"], input[type="password"], input[type="tel"], select{
+            width: 362px;
+            padding: 12px;
+            border: 1px solid rgb(168, 166, 166);
+            border-radius: 4px;
+            resize: none;
+        }
+        input[type="radio"]{
+            margin-top: 12px;
+            border: 1px solid rgb(168, 166, 166);
+        }
+        textarea{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgb(168, 166, 166);
+            border-radius: 4px;
+            resize: vertical;
+        }
+        input[type="submit"]{
+            background-color: blue;
+            margin: 30px auto;
+            color: white;
+            padding: 12px 50px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(0, 0, 170);
+        }
+        input:focus-visible{
+            outline: none;
+        }                             
+        .col_1{
+            float: left;
+            text-align: right;
+            width: 25%;
+            margin-top: 6px;
+        }
+        .col_2{
+            float: left;
+            width: 45%;
+            margin-top: 6px;
+        }
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="reg">
+        <h1>Regisration for Job</h1>
+        <form action="">
+            <!-- 1st box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">First Name</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="f_name" onblur="return check_blank(this, 'msg_1')" onkeyup="return regex_name(this, 'msg_1')" placeholder="Enter First Name">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_1"></span>
+                </div>
+            </div>
+
+            <!-- 2nd box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Middle Name</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="m_name" onblur="return check_blank(this, 'msg_2')" onkeyup="return regex_name(this, 'msg_2')" placeholder="Enter Middle Name">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_2"></span>
+                </div>
+            </div>
+
+            <!-- 3rd box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Last Name</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="l_name" onblur="return check_blank(this, 'msg_3')" onkeyup="return regex_name(this, 'msg_3')" placeholder="Enter Last Name">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_3"></span>
+                </div>
+            </div>
+
+            <!-- 4th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Address</label>
+                </div>
+                <div class="col_2">
+                    <textarea name="add" id="add" cols="58" rows="5" onblur="return check_blank(this, 'msg_4')" onkeyup="return add_fn()" placeholder="Enter Address" maxlength="250"></textarea>
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_4"></span>
+                </div>
+            </div>
+
+            <!-- 5th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Date of Birth</label>
+                </div>
+                <div class="col_2">
+                    <input type="date" name="dob" id="dob" onblur="return check_blank(this, 'msg_5')">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_5"></span>
+                </div>
+            </div>
+
+            <!-- 6th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Gender</label>
+                </div>
+                <div class="col_2">
+                    <input type="radio" name="gen" id="male" onblur="return select_radio(this, 'msg_6')">
+                    <label for="" class="male">Male</label>
+                    <input type="radio" name="gen" id="female" onblur="return select_radio(this, 'msg_6')">
+                    <label for="">Female</label>
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_6"></span>
+                </div>
+            </div>
+
+            <!-- 7th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Experiance</label>
+                </div>
+                <div class="col_2">
+                    <select name="" id="exp" onblur="return check_blank(this, 'msg_7')">
+                        <option value="-1">-----Select------</option>
+                        <option value="">1 year</option>
+                        <option value="">2 year</option>
+                        <option value="">3 year</option>
+                        <option value="">4 year</option>
+                        <option value="">5 year</option>
+                        <option value="">6 year</option>
+                        <option value="">7 year</option>
+                    </select>
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_7"></span>
+                </div>
+            </div>
+
+            <!-- 8th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Mobile No</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="mno" maxlength="10" placeholder="Enter Mobile No" onblur="return check_blank(this, 'msg_8')" onkeyup="return mobile_reg(this, 'msg_8')">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_8"></span>
+                </div>
+            </div>
+
+            <!-- 9th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Email Id</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="mail" placeholder="Enter Email" onblur="return check_blank(this, 'msg_9')" onkeyup="return email_reg()">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_9"></span>
+                </div>
+            </div>
+
+            <!-- 10th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Create Password</label>
+                </div>
+                <div class="col_2">
+                    <input type="password" name="" id="pass" placeholder="Enter Password" onblur="return check_blank(this, 'msg_10')" onkeyup="return pass_check()" maxlength="15">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_10"></span>
+                </div>
+            </div>
+
+            <!-- 11th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="" class="c_pass">Create Confirm Password</label>
+                </div>
+                <div class="col_2">
+                    <input type="password" name="" id="c_pass" maxlength="15" placeholder="Enter Confirm Password" onblur="return check_blank(this, 'msg_11')" onkeyup="return pass_compare()">
+                </div>
+                <div class="col_3">
+                    <span class="msg" id="msg_11"></span>
+                </div>
+            </div>
+
+            <!-- 12th box -->
+            <div class="row">
+                <div class="col_1"></div>
+                <div class="col_2">
+                    <input type="checkbox" name="" id="" onclick="return show_pass()">
+                    <label for="">Show Password</label>
+                </div>
+                <div class="col_3"></div>
+            </div>
+
+            <!-- button -->
+            <div class="row">
+                <div class="col_1"></div>
+                <div class="col_2">
+                    <input type="submit" onclick="return click_form()" value="Register">
+                </div>
+                <div class="col_3"></div>
+            </div>
+        </form>
+    </div>
+
+    
+    <script src="form.js  "></script>
+</body>
+</html>

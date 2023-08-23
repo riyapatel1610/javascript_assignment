@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            border: 2px solid black;
+            width: 660px;
+            height: auto;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h5{
+            font-size: 22px;
+        }
+        .text{
+            font-size: 22px;
+            text-align: center;
+            padding: 30px 0px 15px 0px;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+        label{
+            font-size: 20px;
+        }
+        input[type = "text"]{
+            height: 25px;
+            width: 90%;
+            padding: 0px 0px 0px 5px;
+        }
+        input:focus-visible{
+            outline: none;
+        }
+        button{
+            height: 30px;
+            width: 140px;
+            font-size: 18px;
+        }
+        .msg{
+            color: blue;
+        }
+        .res{
+            display: flex;
+            font-size: 17px;
+            padding: 10px 0px 10px 0px;
+            gap: 50px;
+        }
+        .res .res_1{
+            flex: 0.6;
+            padding-left: 80px;
+        }
+        .res .res_2{
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h5>Marksheet for Information Technology</h5>
+        <div class="text">Enter Marks</div>
+        <form action="">
+            <div class="row">
+                <div class="col_1">
+                    <label for="">1. C Language</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="one" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 2nd box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">2. C++ Language</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" id="two" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 3rd box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">3. Database</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="three" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 4th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">4. HTML</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="four" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 5th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">5. CSS</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="five" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 6th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">6. PHP</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="six" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 7th box -->
+            <div class="row">
+                <div class="col_1">
+                    <label for="">7. Core Java</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" id="seven" maxlength="2">
+                </div>
+            </div>
+
+            <!-- 8th box -->
+            <div class="row">
+                <div class="col_1"></div>
+                <div class="col_2">
+                    <button onclick="return mark()">Result</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="res">
+            <div class="res_1">
+                <div>Total is : <span class="msg" id="msg_1"></span> / 350</div>
+            </div>
+            <div class="res_2">
+                <div>Percentage is : <span class="msg" id="msg_2"></span> %</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mark(){
+            let one = document.getElementById("one").value;
+            let two = document.getElementById("two").value;
+            let three = document.getElementById("three").value;
+            let four = document.getElementById("four").value;
+            let five = document.getElementById("five").value;
+            let six = document.getElementById("six").value;
+            let seven = document.getElementById("seven").value;
+            let total = parseFloat(one) + parseFloat(two) + parseFloat(three) + parseFloat(four) + parseFloat(five) + parseFloat(six) + parseFloat(seven);
+            document.getElementById("msg_1").innerText = total;
+            var avg = total * 100 / 350;
+            document.getElementById("msg_2").innerHTML = Math.round(avg, 2);
+            return false;
+        }
+    </script>
+</body>
+</html>

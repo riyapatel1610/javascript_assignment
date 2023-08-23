@@ -1,0 +1,151 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    margin: 0px 80px;
+}
+/* ================header=================== */
+header{
+    background-color: rgba(228, 5, 120, 0.978);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+header .header_p{
+    padding: 20px 0px;
+}
+header .header_flex{
+    display: flex;
+    align-items: center;
+}
+header .logo h1 img{
+    height: 60px;
+    width: 60px;
+}
+header .header_flex .logo{
+    flex: 1;
+}
+header .header_flex .nav{
+    flex: 3;
+}
+header .header_flex .nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-size: 20px;
+    
+}
+header .header_flex .nav ul li{
+    padding: 10px;
+}
+header .header_flex .nav ul li a{
+    color: blueviolet
+}
+header .header_flex .theme{
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    font-size: 20px;
+    color: white;
+}
+header .header_flex .theme .toggle_btn{
+    position: relative;
+    display: none;
+}
+header .header_flex .theme button{
+    padding: 5px 10px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/* =======create random class which is not include any structure (for replacing navbar)====== */
+header .header_flex .nav_toggle{
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    width: 100%;
+    background-color: black;
+}
+header .header_flex .nav_toggle ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 20px 0px;
+}
+header .header_flex .nav_toggle ul li{
+    padding: 5px;
+}
+header .header_flex .nav_toggle ul li a{
+    color: rgb(230, 237, 240);
+}
+/* ==============media query================= */
+@media (max-width : 576px) {
+    .container{
+        margin: 0px 20px;
+    }
+    header .header_flex .nav{
+        display: none;
+    }
+    header .header_flex .theme .toggle_btn{
+        display: block;
+    }
+    header .header_flex .nav_toggle{
+        display: block;
+    }
+}
+@media (min-width : 576px) {
+    .container{
+        margin: 0px 35px;
+    }
+    header .header_flex .nav{
+        display: none;
+    }
+    header .header_flex .theme .toggle_btn{
+        display: block;
+    }
+    header .header_flex .nav_toggle{
+        display: block;
+    }
+}
+@media (min-width : 768px) {
+    /* inherit form min width 568px */
+}
+@media (min-width : 992px) {
+    .container{
+        margin: 0px 50px;
+    }
+    header .header_flex .nav{
+        display: block;
+    }
+    header .header_flex .theme .toggle_btn{
+        display: none;
+    }
+    header .header_flex .nav_toggle{
+        display: none;
+    }
+}
+@media (min-width : 1200px) {
+    .container{
+        margin: 0px 80px;
+    }
+}

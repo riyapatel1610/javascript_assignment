@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Operation</title>
+    <style>
+        #msg{
+            color: blue;
+        }
+        .main{
+            border: 2px solid black;
+            width: 526px;
+            height: auto;
+            margin: 110px auto;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+        }
+        .sub{
+            text-align: center;
+            padding: 20px 0px;
+            font-size: 20px;
+        }
+        .col_1{
+            flex: .7;
+            padding: 0px 0px 0px 30px;
+        }
+        .col_2{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+        }
+        input[type = "text"]{
+            width: 80%;
+            height: 25px;
+            padding: 0px 0px 0px 5px;
+        }
+        input:focus-visible{
+            outline: none;
+        }
+        button{
+            height: 35px;
+            width: 56px;
+            font-size: 25px;
+            margin: 4px;
+        }
+        .cla{
+            margin: 0px 0px 15px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sub">Maths Operations</div>
+        <form action="" name="myform">
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Enter 1st Number :</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" id="user_inp">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col_1">
+                    <label for="">Enter 2nd Number :</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" id="user_inpu">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col_1 cla">
+                    <button onclick="return add()">+</button>
+                    <button onclick="return subtraction()">-</button>
+                    <button onclick="return multi()">*</button>
+                    <button onclick="return division()">/</button>
+                    <button onclick="return pre()">%</button>
+                </div>
+                <div class="col_2">
+                    <p>Answer is : <span id="msg"></span></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function add(){
+            var num_1 = document.getElementById("user_inp").value;
+            var num_2 = document.getElementById("user_inpu").value;
+            let res = parseFloat(num_1) + parseFloat(num_2);
+            document.getElementById("msg").innerHTML = res;
+            return false;
+        }
+        function subtraction(){
+            var num_1 = document.getElementById("user_inp").value;
+            var num_2 = document.getElementById("user_inpu").value;
+            let res = parseFloat(num_1) - parseFloat(num_2);
+            document.getElementById("msg").innerHTML = res;
+            return false;
+        }
+        function multi(){
+            var num_1 = document.getElementById("user_inp").value;
+            var num_2 = document.getElementById("user_inpu").value;
+            let res = parseFloat(num_1) * parseFloat(num_2);
+            document.getElementById("msg").innerHTML = res;
+            return false;
+        }
+        function division(){
+            var num_1 = document.getElementById("user_inp").value;
+            var num_2 = document.getElementById("user_inpu").value;
+            let res = parseFloat(num_1) / parseFloat(num_2);
+            document.getElementById("msg").innerHTML = res;
+            return false;
+        }
+        function pre(){
+            var num_1 = document.getElementById("user_inp").value;
+            var num_2 = document.getElementById("user_inpu").value;
+            let res = parseFloat(num_1) % parseFloat(num_2);
+            document.getElementById("msg").innerHTML = res;
+            return false;
+        }
+    </script>
+</body>
+</html>

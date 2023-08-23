@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+    .display{
+        border-radius: 6px;
+        color: white;
+        font-size: 34px;
+        border: 3px solid black;
+        height: 85px;
+        width: 345px;
+        background: linear-gradient(to bottom, red, rgb(190 185 185), rgb(43, 42, 42), red);
+        display: grid;
+        place-content: center;
+        margin: 190px auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="display">
+        <div id="time"></div>
+    </div>
+
+    <script>
+        setInterval(()=>{
+            const time = document.getElementById("time");
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let day_night = "AM";
+            if(hours > 12){
+                day_night = "PM";
+                hours = hours - 12;
+            }
+            if(hours < 10){
+                hours = "0" + hours;
+            }
+            if(minutes < 10){
+                minutes = "0" + minutes;
+            }
+            if(seconds < 10){
+                seconds = "0" + seconds;
+            }
+            time.textContent = hours + " : " + minutes + " : " + seconds + " " + day_night;
+        });
+    </script>
+</body>
+</html>

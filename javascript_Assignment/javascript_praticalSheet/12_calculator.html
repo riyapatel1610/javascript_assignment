@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .calculator{
+            border: 3px solid black;
+            padding:10px;
+            width: fit-content;
+            margin: 70px auto;
+        }
+        .calculator h2{
+            font-size: 25px;
+        }
+        button{
+            font-size: 30px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            height: 100%;
+            border: 1px solid blue;
+            width: 100%;
+            cursor: pointer;
+        }
+        td{
+            height: 60px;
+            width: 100px;
+        }
+        input{
+            border: 3px solid black;
+            height: 48px;
+            width: 96%;
+            font-size: 25px;
+            font-weight: 600;
+            text-align: right;
+        }
+        input[type = "text"]{
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>calculator</h2>
+        <table>
+
+            <tr class="userinput">
+                <td colspan="4"><input type="text" name="" id="get_value"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="clean()">CE</button></td>
+                <td><button onclick="storedata('%')">%</button></td>
+                <td><button onclick="storedata('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="storedata('7')">7</button></td>
+                <td><button onclick="storedata('8')">8</button></td>
+                <td><button onclick="storedata('9')">9</button></td>
+                <td><button onclick="storedata('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="storedata('4')">4</button></td>
+                <td><button onclick="storedata('5')">5</button></td>
+                <td><button onclick="storedata('6')">6</button></td>
+                <td><button onclick="storedata('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="storedata('1')">1</button></td>
+                <td><button onclick="storedata('2')">2</button></td>
+                <td><button onclick="storedata('3')">3</button></td>
+                <td><button onclick="storedata('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="storedata('00')">00</button></td>
+                <td><button onclick="storedata('0')">0</button></td>
+                <td><button onclick="storedata('.')">.</button></td>
+                <td><button onclick="calculatedata()">=</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function storedata(v){
+            var userinput = document.getElementById("get_value");
+            var oldvalue = userinput.value;
+            var Lvalue = oldvalue.length;
+            var lastchar = oldvalue[Lvalue-1];
+            var oprsymbol = ["+","-","*","/",".","%"];
+            if(oprsymbol.includes(v)){
+                if(oprsymbol.includes(lastchar)){
+                    var removelast = oldvalue.slice(0,-1);
+                    userinput.value = removelast + v;
+                }else{
+                    userinput.value = oldvalue + v;
+                }
+            }else{
+                userinput.value = oldvalue + v;
+            }
+        }
+    
+        function calculatedata(){
+            var userinput = document.getElementById("get_value");
+            var oldvalue = eval(userinput.value);
+            userinput.value = oldvalue;
+        }
+        
+        function clean(){
+            document.getElementById("get_value").value = "";
+        }
+    </script>
+</body>
+</html>

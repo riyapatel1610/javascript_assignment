@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Minimum Number</title>
+    <style>
+        .main{
+            border: 3px solid black;
+            width: 450px;
+            height: 220px;
+            margin: 110px auto;
+            padding: 20px;
+        }
+        .head{
+            font-size: 25px;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 5px;
+            align-items: center;
+            place-content: center;
+        }
+        form{
+            margin: 30px 0px 0px 0px;
+        }
+        label{
+            font-size: 20px;
+        }
+        input[type = "text"]{
+            width: 90%;
+            padding: 0px 0px 0px 5px;
+            height: 20px;
+        }
+        button{
+            font-size: 17px;
+        }
+        p{
+            padding-left: 143px;
+            font-size: 20px;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="head">Enter Any Two Number to Display Which Number is Minimum from them</div>
+        <form action="">
+             <div class="row">
+                <div class="col_1">
+                    <label for="">1st Number</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="user_input">
+                </div>
+             </div>
+             <div class="row">
+                <div class="col_1">
+                    <label for="">2nd Number</label>
+                </div>
+                <div class="col_2">
+                    <input type="text" name="" id="user">
+                </div>
+             </div>
+             <div class="row">
+                <div class="col_1"></div>
+                <div class="col_2">
+                    <button onclick="return mini_fn()">Display</button>
+                </div>
+             </div>
+        </form>
+        <p id="msg"></p>
+    </div>
+
+<script>
+    function mini_fn(){
+        let num_1 = document.getElementById("user_input").value;
+        let num_2 = document.getElementById("user").value;
+        let minimum = Math.min(parseFloat(num_1), parseFloat(num_2));
+        document.getElementById("msg").innerText = minimum + " is minimum";
+        return false;
+    }
+</script>
+
+</body>
+</html>

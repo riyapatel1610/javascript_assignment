@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>green blue Color</title>
+    <style>
+        .main{
+            height: 400px;
+            width: 500px;
+            margin: 70px auto;
+            border: 1px solid black;
+        }
+        #box_1, #box_2{
+            height: 150px;
+            width: 150px;
+            border: 2px solid black;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        button{
+            height: 30px;
+            width: 70px;
+            margin: 10px 0px 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="">
+            <button id="btn_1" onclick="return select_Green()">Green</button>
+            <button id="btn_2" onclick="return select_Blue()">Blue</button>
+        </form>
+        <hr>
+        <div class="colo">
+            <div id="box_1"></div>
+            <div id="box_2"></div>
+        </div>
+    </div>
+
+    <script>
+        function select_Green() {
+            let box_1 = document.getElementById("box_1");
+            if(box_1.style.backgroundColor != "green"){
+                box_1.style.backgroundColor = "green";
+                return false;
+            }else{
+                box_1.style.backgroundColor = "transparent";
+                return false;
+            }
+        }
+
+        function select_Blue(){
+            let box_2 = document.getElementById("box_2");
+            if(box_2.style.backgroundColor != "blue"){
+                box_2.style.backgroundColor = "blue";
+                return false;
+            }else{
+                box_2.style.backgroundColor = "transparent";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Color Palate</title>
+    <style>
+        .main{
+            border: 1px solid black;
+            width: 300px;
+            height: 250px;
+            margin: 130px auto;
+            font-size: 18px;
+        }
+        form{
+            border-bottom: 3px solid rgb(218, 214, 214);
+            padding-bottom: 3px;
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+        }
+        input{
+            height: 30px;
+            width: 70px;
+            padding: 1px;
+            margin: 3px;
+        }
+        #box{
+            height: 133px;
+            width: 130px;
+            border: 1px solid black;
+            margin: 10px 0px 0px 3px;
+        }
+        button{
+            height: 30px;
+            width: 100px;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="">
+            <label for="">Set Color : </label>
+            <input type="color" id="color" class="color">
+            <button onclick="return change_color()">Set Color</button>
+        </form>
+        <div id="box">hello</div>
+    </div>
+
+    <script>
+        function change_color(){
+            let color = document.getElementById("color").value;
+            let box = document.getElementById("box");
+            box.style.backgroundColor = color;
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    margin:0px 80px;
+}
+/* =============header========= */
+header{
+    background-color: transparent;
+    position:fixed;
+    width: 100%;
+   backdrop-filter: blur(10px);
+   transition: 05s all ease;
+
+}
+/* ==================create random class for haeder bg color which is not incluse in any structure============ */
+.header-fixed{
+    background-color: rgb(15, 54, 231);
+    position:fixed;
+    width: 100%;
+    top: 0;
+   backdrop-filter: blur(10px);
+   transition: 0.5s all ease;
+
+}
+header .header-p{
+    padding: 20px 0px;
+}
+header .header-flex{
+    display:flex;
+    align-items: baseline;
+}
+header .header-flex .logo{
+    flex:1;
+    
+}
+header .header-flex .logo h1{
+    color:white;
+}
+
+header .header-flex .navbar{
+    flex:4;
+}
+header .header-flex .navbar ul{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+
+}
+header .header-flex .navbar ul li{
+    padding: 10px;
+}
+header .header-flex .navbar ul li a{
+    color:white;
+}
+header .header-flex .theme{
+    flex:0.5;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    gap:20px;
+    align-items: center;
+    justify-content: end;
+}
+header .header-flex .theme .Togglebtn{
+    display: none;
+    position: relative;
+
+}
+header .header-flex .theme button{
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+    border: 2px solid white;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* ============crate random class which is not include any structure===============
+============for replacing navbar */
+header .header-flex .nav-toggle{
+   
+   background-color:rgb(41, 208, 15);
+   position: absolute;
+   top:80px;
+   width: 100%;
+   left:0;
+   height: auto;
+}
+header .header-flex .nav-toggle ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    text-align: center;
+
+}
+header .header-flex .nav-toggle ul li{
+    padding: 5px;
+}
+header .header-flex .nav-toggle ul li a{
+    color:black;
+}
+/* ===========================bgimage================ */
+.bgimage img{
+    height: 900px;
+    width: 100%;
+}
+
+/* =============media Query=============== */
+@media(max-width:576px){
+    .container{
+        margin:0px 20px;
+    }
+    header .header-flex .theme .togglebtn{
+        display: block;
+    
+    }
+    header .header-flex .navbar{
+        display: none;
+    }
+    header .header-flex .nav-toggle{
+       display: block;
+     }
+   
+}
+/* ======================min:576================= */
+@media(min-width:576px){
+    .container{
+        margin:0px 35px;
+    }
+    header .header-flex .theme .togglebtn{
+        display: block;
+    
+    }
+    header .header-flex .navbar{
+        display: none;
+    }
+    header .header-flex .nav-toggle{
+       display: block;
+     }
+ }
+ @media(min-width:768px){
+    /* inherit from 576 */
+
+ }
+ @media(min-width:992px){
+    .container{
+        margin:0px 50px;
+    }
+    header .header-flex .theme .togglebtn{
+        display: none;
+    
+    }
+    header .header-flex .navbar{
+        display: block;
+    }
+    header .header-flex .nav-toggle{
+       display: none;
+     }
+ }
+ @media(min-width:1200px){
+    .container{
+        margin:0px 80px;
+    }
+   
+ }
+
+
+
+
+
